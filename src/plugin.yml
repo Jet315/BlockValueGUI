@@ -1,0 +1,9 @@
+name: BlockValueGUI
+version: 1.0
+description: Provides a GUI for values in ASkyBlock
+main: me.jet315.blockvalues.Core
+depend: [ASkyBlock]
+commands:
+  blockvalue:
+    description: The base command for the plugin
+    aliases: [blockvalues]

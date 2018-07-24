@@ -1,0 +1,77 @@
+#############################################
+#                                           #
+#                BlockValueGUI              #
+#              Created by Jet315            #
+#                                           #
+#############################################
+#Plugin depends on ASkyBlock
+
+#The prefix that is shown before any messages
+PluginsPrefix: "&3BlockValues &7» "
+
+#The GUI name of the block menu - use %PAGE% to determine what page the user is currently on, and %PAGES% for the total number of pages
+GUIName: "&8Block Values &7Page (%PAGE%/%PAGES%)"
+
+#The blocks in the GUI can be arranged by:
+# ASCENDING - Block values from highest to lowest
+# DESCENDING - Block values from lowest to highest
+# RANDOM - A way chosen by Java
+# NAMES - From A - B using material names
+ArrangeBlockOrder: "ASCENDING"
+
+#The next section identifies how to display each of the Items in the GUI
+#Possible Placeholders:
+#%NAME% - The name of the Item
+#%VALUE% - The value that this block gives to the island
+BlockDisplayName: "&r%NAME%"
+BlockLore:
+  - "&eBlock Value: &c%VALUE%"
+ValueFormat: "#0.00" #each block value is usually <0, so to what degree of accuracy would you like to show? (Default is 2 Decimal Places)
+
+#GUI items are positioned on the bottom row (from spaces 45-54)
+#The material must be a valid bukkit material
+GUIItems:
+# The item used to go back pages
+  backPageItem:
+    material: STAINED_GLASS_PANE
+    data: 14
+    displayName: "&b&lPrevious Page"
+    lore:
+      - "&7Go back to a previous page"
+    glow: false
+    alwaysShow: false #If this is true, the item will always appear at the bottom (Even if there is no back page for example)
+    commandToPerformWhenClicked: "none" #the command to perform if this is clicked - "none" for no command
+    slotID: 49 #The position it will be in the inventory
+# The item used to go forward pages
+  forwardPageItem:
+    material: STAINED_GLASS_PANE
+    data: 5
+    displayName: "&b&lNext Page"
+    lore:
+      - "&7Go forward to the next page"
+    glow: false
+    alwaysShow: false
+    commandToPerformWhenClicked: "none"
+    slotID: 51
+# The item used to go exit the inventory
+  exitInventoryItem:
+    material: NETHER_STAR
+    data: 0
+    displayName: "&c&lExit Page"
+    lore:
+      - "&7Go forward to the next page"
+    glow: true
+    alwaysShow: true #If this is false, the item will not be listed
+    commandToPerformWhenClicked: "none"
+    slotID: 50
+# The item used to fill the bottom line of the inventory
+  fillerInventoryItem:
+    material: STAINED_GLASS_PANE
+    data: 7
+    displayName: "&c&lExit Page"
+    lore:
+      - "&7Go forward to the next page"
+    glow: false
+    alwaysShow: true #If this is false, the item will not be listed
+    commandToPerformWhenClicked: "none"
+    slotID: -1 #Ignored
